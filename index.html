@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Comprehensive screen printing exposure time chart for diazo, SBQ, and capillary film emulsions. Find accurate exposure times for different mesh counts and wattages.">
+  <title>Screen Printing Exposure Time Chart | Ultimate Reference Guide</title>
+  <!-- Google Fonts & simple reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #f4f7fb;
+      color: #1a2c3e;
+      line-height: 1.5;
+      padding: 2rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 2rem;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    /* header & intro */
+    .hero {
+      background: linear-gradient(135deg, #0b2b3b 0%, #1c4e6f 100%);
+      padding: 2.5rem 2rem;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .hero h1 span {
+      background: #f5b04220;
+      backdrop-filter: blur(4px);
+      font-size: 1.2rem;
+      background: #f5a62320;
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      font-weight: 500;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      opacity: 0.9;
+      margin-top: 0.5rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .badge {
+      background: #ffffff22;
+      backdrop-filter: blur(4px);
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* chart section */
+    .chart-section {
+      padding: 2rem 1.8rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #0f3b4f;
+      border-left: 5px solid #f5a623;
+      padding-left: 1rem;
+    }
+
+    .sub {
+      color: #4a627a;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+
+    /* responsive table wrapper */
+    .table-wrapper {
+      overflow-x: auto;
+      border-radius: 1.2rem;
+      border: 1px solid #e2edf2;
+      background: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      margin-bottom: 2rem;
+    }
+
+    .exposure-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      min-width: 620px;
+    }
+
+    .exposure-table th {
+      background: #eef3f8;
+      padding: 1rem 1rem;
+      font-weight: 700;
+      color: #1c4e6f;
+      border-bottom: 2px solid #cddfe8;
+      text-align: center;
+    }
+
+    .exposure-table td {
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid #e9f0f4;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .exposure-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .exposure-table tbody tr:hover {
+      background: #fafcfd;
+    }
+
+    .emulsion-badge {
+      background: #eef2fa;
+      font-weight: 600;
+      padding: 0.25rem 0.7rem;
+      border-radius: 30px;
+      display: inline-block;
+      font-size: 0.8rem;
+    }
+
+    .note {
+      background: #fef7e0;
+      padding: 1rem 1.5rem;
+      border-radius: 1rem;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+      border-left: 4px solid #f5a623;
+      color: #4a3b1c;
+    }
+
+    /* resource cards + backlinks */
+    .resource-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 2rem 0 1.5rem;
+      justify-content: space-between;
+    }
+
+    .card {
+      flex: 1;
+      min-width: 240px;
+      background: #ffffff;
+      border-radius: 1.5rem;
+      border: 1px solid #e2edf2;
+      padding: 1.6rem;
+      transition: all 0.2s;
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: #cbdbe2;
+      box-shadow: 0 15px 25px -12px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+      color: #1c4e6f;
+    }
+
+    .card p {
+      color: #3e5a6f;
+      margin-bottom: 1.2rem;
+      font-size: 0.95rem;
+    }
+
+    .dofollow-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #0b2b3b;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.65rem 1.2rem;
+      border-radius: 40px;
+      transition: 0.2s;
+      font-size: 0.9rem;
+      border: none;
+    }
+
+    .dofollow-link i {
+      font-size: 1.1rem;
+      font-style: normal;
+    }
+
+    .dofollow-link:hover {
+      background: #1c4e6f;
+      transform: scale(0.98);
+    }
+
+    .video-link {
+      background: #2c3e2f;
+    }
+
+    .video-link:hover {
+      background: #3b5a3a;
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 1.5rem 1rem;
+      border-top: 1px solid #e2edf2;
+      font-size: 0.85rem;
+      color: #6b8aa3;
+    }
+
+    /* tips & interactive */
+    .tips {
+      background: #f9fdfe;
+      border-radius: 1.2rem;
+      padding: 1.5rem;
+      margin: 2rem 0 1rem;
+      border: 1px solid #d9e9f0;
+    }
+
+    .tips h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+
+    .tips ul {
+      margin-left: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .tips li {
+      margin: 0.5rem 0;
+    }
+
+    @media (max-width: 780px) {
+      body {
+        padding: 1rem;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .chart-section {
+        padding: 1.2rem;
+      }
+      .card h3 {
+        font-size: 1.2rem;
+      }
+      .exposure-table th, .exposure-table td {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .resource-grid {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="hero">
+    <h1>
+      🎨 Screen Printing Exposure Time Chart 
+      <span>📊 Ultimate Guide</span>
+    </h1>
+    <p>Accurate exposure times for diazo, SBQ, and capillary film emulsions. Optimize your stencil durability, detail sharpness, and reclaim consistency — all in one reference.</p>
+    <div class="badge-row">
+      <div class="badge">⚡ Mesh count based</div>
+      <div class="badge">💡 Lamp wattage reference</div>
+      <div class="badge">🖨️ DIY & pro tips</div>
+    </div>
+  </div>
+
+  <div class="chart-section">
+    <h2 class="section-title">⏱️ Exposure Time Chart (minutes · seconds)</h2>
+    <div class="sub">Recommended baseline times for standard UV exposure units & 500W-1000W metal halide / LED units. Always perform a step wedge test.</div>
+    
+    <div class="table-wrapper">
+      <table class="exposure-table">
+        <thead>
+          <tr>
+            <th>Mesh Count</th>
+            <th>Emulsion Type</th>
+            <th>500W Halide / UV</th>
+            <th>1000W Metal Halide</th>
+            <th>LED UV (405nm)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>110 - 156</td><td><span class="emulsion-badge">Diazo (dual-cure)</span></td><td>4:15 – 5:30 min</td><td>2:10 – 3:00 min</td><td>45 – 70 sec</td></tr>
+          <tr><td>110 - 156</td><td><span class="emulsion-badge">SBQ / Pure Photopolymer</span></td><td>2:45 – 3:45 min</td><td>1:20 – 2:00 min</td><td>25 – 45 sec</td></tr>
+          <tr><td>156 - 196</td><td><span class="emulsion-badge">Diazo (dual-cure)</span></td><td>5:00 – 6:20 min</td><td>2:30 – 3:30 min</td><td>55 – 85 sec</td></tr>
+          <tr><td>156 - 196</td><td><span class="emulsion-badge">SBQ / Pure Photopolymer</span></td><td>3:20 – 4:15 min</td><td>1:45 – 2:30 min</td><td>30 – 55 sec</td></tr>
+          <tr><td>230 - 305</td><td><span class="emulsion-badge">Diazo (dual-cure)</span></td><td>6:30 – 8:00 min</td><td>3:30 – 4:45 min</td><td>75 – 110 sec</td></tr>
+          <tr><td>230 - 305</td><td><span class="emulsion-badge">SBQ / Pure Photopolymer</span></td><td>4:00 – 5:30 min</td><td>2:15 – 3:00 min</td><td>45 – 75 sec</td></tr>
+          <tr><td>305 - 355+</td><td><span class="emulsion-badge">Capillary Film (direct)</span></td><td>5:30 – 7:00 min</td><td>2:45 – 4:00 min</td><td>60 – 95 sec</td></tr>
+          <tr><td>High Mesh (355+)</td><td><span class="emulsion-badge">SBQ High Solid</span></td><td>5:00 – 6:30 min</td><td>2:30 – 3:45 min</td><td>50 – 80 sec</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      💡 <strong>Pro Tip:</strong> Exposure times vary based on emulsion thickness, age, humidity, and lamp distance. Always perform an exposure calculator test before production runs. The chart above is a starting reference for 1:1 coating (1+1 sharp edge).
+    </div>
+
+    <!-- BACKLINKS SECTION: dofollow links as requested -->
+    <div class="resource-grid">
+      <!-- backlink 1: Screen Printing Exposure Calculator -->
+      <div class="card">
+        <h3>📐 Exposure Calculator Tool</h3>
+        <p>Get your precise exposure time with interactive step wedge testing. Stop guessing and dial in perfect stencils in minutes.</p>
+        <a href="https://www.mainconverter.com/screen-printing-exposure-calculator/" class="dofollow-link" target="_blank" rel="dofollow noopener">
+          🔗 Screen Printing Exposure Calculator →
+        </a>
+      </div>
+      <!-- backlink 2: YouTube video tutorial (dofollow) -->
+      <div class="card">
+        <h3>🎬 Video Tutorial</h3>
+        <p>How to Make a Screen-Printing Stencil with Emulsion – step by step guide, coating technique, exposure tips & reclaim.</p>
+        <a href="https://youtu.be/NKl_MP0NB5w" class="dofollow-link video-link" target="_blank" rel="dofollow noopener">
+          ▶️ Watch on YouTube: Stencil & Emulsion Guide →
+        </a>
+      </div>
+    </div>
+
+    <!-- additional helpful tips & interactive elements -->
+    <div class="tips">
+      <h3>🕒 Factors that affect exposure time</h3>
+      <ul>
+        <li><strong>Mesh count & color:</strong> Yellow mesh reduces light scatter, may require slightly less exposure vs white mesh.</li>
+        <li><strong>Emulsion age & sensitizer:</strong> Diazo emulsions lose sensitivity over time; increase exposure by 15–20% if older than 4 weeks.</li>
+        <li><strong>Lamp age & cleanliness:</strong> Dirty glass or aging bulbs extend required exposure times.</li>
+        <li><strong>Relative humidity:</strong> Above 60% can increase exposure demand due to moisture in stencil.</li>
+      </ul>
+      <p style="margin-top: 12px;">✅ <strong>Quick verification:</strong> After exposure and washout, a properly exposed screen will have a firm stencil, sharp edges, and no pinholes. Underexposed screens break down quickly, overexposed stencils are hard to reclaim and lose detail.</p>
+    </div>
+
+    <!-- bonus alternative chart compact for mobile / quick reference -->
+    <h2 class="section-title" style="margin-top: 1rem;">🔍 Quick Reference: SBQ vs Diazo</h2>
+    <div class="table-wrapper">
+      <table class="exposure-table">
+        <thead>
+          <tr><th>Emulsion Type</th><th>Pros</th><th>Typical Exposure (30-40W LED / 500W UV)</th><th>Best for</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>⚡ SBQ / Photopolymer</td><td>Fast exposure, long shelf life, water resistant</td><td>25-90 sec (LED) / 2-5 min (halide)</td><td>Fine detail, high-volume production</td></tr>
+          <tr><td>🟡 Diazo / Dual-Cure</td><td>Forgiving, excellent water resistance, durable</td><td>45-130 sec (LED) / 4-8 min (halide)</td><td>Plastisol, water-based inks, beginners</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note" style="background:#eaf4f5;">
+      📋 <strong>Exposure Test Strip Method:</strong> Use an exposure calculator (like the Stouffer strip or free step wedge). Cover screen in 30-second increments to find ideal time. <a href="https://www.mainconverter.com/screen-printing-exposure-calculator/" target="_blank" rel="dofollow" style="color:#1c6f5c; font-weight:600;">Try our calculator tool →</a> to digitize the process.
+    </div>
+
+    <div class="footer-note">
+      © 2026 ScreenPrint Pro Reference — Data compiled from industry standards, emulsion datasheets and real-world tests. Always verify with your specific emulsion brand (Ulano, Saati, Murakami, Chromaline). This chart is for educational purposes.
+    </div>
+  </div>
+</div>
+
+<!-- adding a tiny inline schema / structured data to improve search visibility but not required -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Screen Printing Exposure Time Chart",
+  "description": "Reference chart for screen printing exposure times based on mesh count, emulsion type, and lamp wattage.",
+  "supply": ["Emulsion", "Mesh Screen", "UV Exposure Unit", "Transparency Film"],
+  "totalTime": "PT5M",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "text": "Select your mesh count and emulsion type from the exposure chart."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Set exposure time based on your lamp wattage and perform a test strip."
+    }
+  ]
+}
+</script>
+</body>
+</html>
